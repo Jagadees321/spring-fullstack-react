@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\AtluriMukesh\Downloads\fullstack"/>
+			<item value="D:\spring boot microservices\JavaFunctional"/>
+			<item value="D:\spring boot microservices\SpringSecurity"/>
+			<item value="C:\Users\AtluriMukesh\Downloads\MongoRestApi"/>
+			<item value="C:\Users\AtluriMukesh\Downloads\MongoRestApiDocker"/>
+			<item value="D:\spring boot microservices\MongoRestApiDocker"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>

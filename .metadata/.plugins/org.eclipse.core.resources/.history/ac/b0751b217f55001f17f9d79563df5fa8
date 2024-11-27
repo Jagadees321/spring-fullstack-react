@@ -1,0 +1,11 @@
+package com.fullstack.fullstack.service;
+
+import com.fullstack.fullstack.entity.CustomerMailEntity;
+
+public interface MailService {
+	public CustomerMailEntity save(CustomerMailEntity entity);
+	public CustomerMailEntity fetchById(int id);
+	public String sendMail(int id);
+	public String sendMailByEmailId(String email);
+	
+}

@@ -1,0 +1,93 @@
+package com.fullstack.fullstack.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailAuthenticationException;
+import org.springframework.mail.MailSendException;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.stereotype.Service;
+
+import com.fullstack.fullstack.entity.CustomerMailEntity;
+import com.fullstack.fullstack.repo.MailRepository;
+
+import jakarta.mail.internet.AddressException;
+import jakarta.mail.internet.MimeMessage;
+
+
+@Service
+public class MailServiceImpl implements MailService{
+	
+	@Autowired
+	private MailRepository repository;
+	
+	@Autowired
+	private JavaMailSender javaMailSender;
+	
+
+	@Override
+	public CustomerMailEntity save(CustomerMailEntity entity) {
+		return repository.save(entity);
+	}
+
+	@Override
+	public CustomerMailEntity fetchById(int id) {
+		  Optional<CustomerMailEntity> findById = repository.findById(id);
+		  return findById.get();
+	}
+
+	@Override
+	public String sendMail(int id) {
+		String emailId="";
+		try {
+		CustomerMailEntity fetchById = fetchById(id);
+		emailId = fetchById.getEmailId();
+		
+            MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+            MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage, true);
+            messageHelper.setTo(emailId);
+            messageHelper.setSubject("For Testing");
+            messageHelper.setText("Mail Sent By Jagadeesh Through JAVA Program");
+            javaMailSender.send(mimeMessage);
+            return "MESSAGE SENT SUCCESFULLY......";
+		} catch (AddressException e) {
+	        return "The Recipient/Customer Mail Id Is Not Valid (INVALID FORMAT): " + emailId;
+	    } catch (NullPointerException e) {
+	        return "NO Gmail ID found for the given ID: " + id;
+	    } catch (MailAuthenticationException e) {
+	        return "Authentication failed for sending email. Please check your email credentials (UserName/Password)";
+	    } catch (MailSendException e) {
+	        return "Failed to send email. Please check recipient email address and try again (INVALID FORMAT): " + emailId;
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return null;
+	    }
+	}
+
+	@Override
+	public String sendMailByEmailId(String email) {
+		try {
+            MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+            MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage, true);
+            messageHelper.setTo(email);
+            messageHelper.setSubject("For Testing");
+            messageHelper.setText("Mail Sent By jagadeesh Through JAVA Program");
+            javaMailSender.send(mimeMessage);
+            return "MESSAGE SENT SUCCESFULLY......";
+		} catch (AddressException e) {
+	        return "The Recipient/Customer Mail Id Is Not Valid (INVALID FORMAT): " + email;
+	    } catch (NullPointerException e) {
+	        return "NO Gmail ID found for the given : " + email;
+	    } catch (MailAuthenticationException e) {
+	        return "Authentication failed for sending email. Please check your email credentials (UserName/Password)";
+	    } catch (MailSendException e) {
+	        return "Failed to send email. Please check recipient email address and try again (INVALID FORMAT): " + email;
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return null;
+	    }
+	}
+	
+	
+}

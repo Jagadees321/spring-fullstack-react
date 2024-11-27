@@ -1,0 +1,126 @@
+Basic Properties
+Color and Background
+
+color: color-name | hex | rgb() | rgba() | hsl() | hsla()
+background-color: color-name | hex | rgb() | rgba() | hsl() | hsla()
+background-image: url() | none | linear-gradient() | radial-gradient()
+background-repeat: repeat | repeat-x | repeat-y | no-repeat
+background-position: left | center | right | top | bottom | px | %
+Text
+
+font-family: font-name, fallback-font-name
+font-size: xx-small | x-small | small | medium | large | x-large | xx-large | larger | smaller | length | %
+font-weight: normal | bold | bolder | lighter | 100 - 900
+font-style: normal | italic | oblique
+line-height: normal | number | length | %
+text-align: left | right | center | justify | start | end
+text-decoration: none | underline | overline | line-through | blink
+text-transform: none | capitalize | uppercase | lowercase
+letter-spacing: normal | length
+word-spacing: normal | length
+Box Model
+
+width: auto | length | %
+height: auto | length | %
+margin: auto | length | %
+padding: length | %
+border: border-width border-style border-color
+border-width: thin | medium | thick | length
+border-style: none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset
+border-color: color-name | hex | rgb() | rgba() | hsl() | hsla()
+box-sizing: content-box | border-box
+Positioning
+
+position: static | relative | absolute | fixed | sticky
+top: auto | length | %
+right: auto | length | %
+bottom: auto | length | %
+left: auto | length | %
+z-index: auto | number
+overflow: visible | hidden | scroll | auto
+float: none | left | right
+clear: none | left | right | both
+Flexbox
+
+display: flex | inline-flex
+flex-direction: row | row-reverse | column | column-reverse
+flex-wrap: nowrap | wrap | wrap-reverse
+justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly
+align-items: stretch | flex-start | flex-end | center | baseline
+align-content: stretch | flex-start | flex-end | center | space-between | space-around
+flex-grow: number
+flex-shrink: number
+flex-basis: auto | length | %
+order: number
+Grid
+
+display: grid | inline-grid
+grid-template-columns: none | track-size | repeat() | minmax() | auto-fill | auto-fit
+grid-template-rows: none | track-size | repeat() | minmax()
+grid-template-areas: none | string
+grid-gap: length
+grid-column-gap: length
+grid-row-gap: length
+grid-auto-columns: auto | minmax() | length | %
+grid-auto-rows: auto | minmax() | length | %
+grid-auto-flow: row | column | dense | row dense | column dense
+grid-column: auto | span n | span n / auto
+grid-row: auto | span n | span n / auto
+justify-items: start | end | center | stretch
+align-items: start | end | center | stretch
+place-items: align-items justify-items
+justify-self: auto | start | end | center | stretch
+align-self: auto | start | end | center | stretch
+Advanced Properties
+Transitions and Animations
+
+transition: property duration timing-function delay
+transition-property: none | all | property
+transition-duration: time
+transition-timing-function: ease | linear | ease-in | ease-out | ease-in-out | step-start | step-end | steps() | cubic-bezier()
+transition-delay: time
+animation: name duration timing-function delay iteration-count direction fill-mode
+animation-name: none | keyframename
+animation-duration: time
+animation-timing-function: ease | linear | ease-in | ease-out | ease-in-out | step-start | step-end | steps() | cubic-bezier()
+animation-delay: time
+animation-iteration-count: number | infinite
+animation-direction: normal | reverse | alternate | alternate-reverse
+animation-fill-mode: none | forwards | backwards | both
+Transforms
+
+transform: none | transform-functions
+transform-origin: x-axis y-axis z-axis
+transform-style: flat | preserve-3d
+perspective: none | length
+perspective-origin: x-axis y-axis
+backface-visibility: visible | hidden
+Filters
+
+filter: none | blur() | brightness() | contrast() | drop-shadow() | grayscale() | hue-rotate() | invert() | opacity() | saturate() | sepia()
+Pseudo-Classes and Pseudo-Elements
+Pseudo-Classes
+
+:hover
+:active
+:focus
+:visited
+:link
+:first-child
+:last-child
+:nth-child()
+:nth-of-type()
+:not()
+:disabled
+:checked
+Pseudo-Elements
+
+::before
+::after
+::first-letter
+::first-line
+::selection
+Responsive Design
+Media Queries
+@media only | not | and (media feature) { styles }
+media features: width | height | device-width | device-height | orientation | aspect-ratio | resolution | color | color-index 
